@@ -1,0 +1,21 @@
+{
+  "identifier": "pact-rental",
+  "version": "0.1",
+  "status": "research-rfc",
+  "name": "PactRental",
+  "maintainers": [
+    "wpggLabs"
+  ],
+  "core_versions": [
+    "0.1"
+  ],
+  "documents": {
+    "overview": "profiles/pactrental/README.md",
+    "lifecycle": "profiles/pactrental/LIFECYCLE.md",
+    "terms": "profiles/pactrental/TERMS_AND_EVIDENCE.md",
+    "privacy": "profiles/pactrental/PRIVACY_ACCESSIBILITY_AND_ABUSE.md",
+    "responsibility": "profiles/pactrental/RESPONSIBILITY_BOUNDARIES.md"
+  },
+  "schema": "profiles/pactrental/schemas/pactrental-profile.schema.json",
+  "test_vectors": "profiles/pactrental/test-vectors/pactrental-v0.1.json"
+}

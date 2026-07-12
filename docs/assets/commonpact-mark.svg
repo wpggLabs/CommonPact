@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="t d">
+<title id="t">CommonPact mark</title><desc id="d">A square protocol node labeled CP slash 00.</desc>
+<rect width="128" height="128" fill="#090a0c"/>
+<rect x="10" y="10" width="108" height="108" fill="none" stroke="#b7ff58" stroke-width="3"/>
+<path d="M10 34h108M34 10v108" stroke="#34373c" stroke-width="2"/>
+<circle cx="34" cy="34" r="7" fill="#b7ff58"/>
+<text x="48" y="72" fill="#f3f0e8" font-family="ui-monospace,monospace" font-size="25" font-weight="700">CP/00</text>
+<path d="M48 82h57" stroke="#6d8fff" stroke-width="4"/>
+</svg>

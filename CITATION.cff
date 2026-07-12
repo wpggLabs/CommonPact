@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use or discuss CommonPact in research, standards work, or an implementation, please cite this repository."
+title: "CommonPact: An open profile-based protocol proposal for direct coordination"
+type: software
+authors:
+  - name: "wpggLabs"
+version: "0.1.0-rfc"
+date-released: 2026-07-11
+license: Apache-2.0
+repository-code: "https://github.com/wpggLabs/CommonPact"
+url: "https://wpgglabs.github.io/CommonPact/"
+abstract: >-
+  CommonPact is a pre-implementation research RFC for direct discovery,
+  private negotiation, canonical agreement, profile-defined lifecycle events,
+  and portable evidence without a mandatory platform owner. It is the shared
+  protocol-family core from which PactRide is the first source profile.
+keywords:
+  - CommonPact
+  - open protocol
+  - interoperability
+  - peer-to-peer coordination
+  - cryptographic identity
+  - portable evidence
+  - digital public infrastructure
+  - profile-based protocol
+  - PactRide

@@ -1,0 +1,26 @@
+# Canonical GitHub repository settings for maintainers.
+description: >-
+  Open, profile-based coordination protocol for direct discovery, private negotiation,
+  agreements, and portable evidence without a mandatory platform owner.
+homepage: https://wpgglabs.github.io/CommonPact/
+topics:
+  - commonpact
+  - open-protocol
+  - interoperability
+  - peer-to-peer
+  - coordination
+  - decentralized-coordination
+  - digital-public-infrastructure
+  - cryptographic-identity
+  - portable-evidence
+  - federation
+  - protocol-design
+  - research-rfc
+  - pactride
+  - apache-2-0
+social_preview: docs/assets/commonpact-social.png
+family:
+  name: CommonPact
+  role: core
+  source_profile: https://github.com/wpggLabs/PactRide
+status: pre-implementation-research-rfc

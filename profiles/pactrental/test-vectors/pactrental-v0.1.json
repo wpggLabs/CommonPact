@@ -1,0 +1,142 @@
+{
+  "version": "0.1",
+  "cases": [
+    {
+      "name": "valid_canonical_rental_terms",
+      "valid": true,
+      "data": {
+        "asset": {
+          "reference": "asset:fixture:drill-1",
+          "category": "tool",
+          "condition_summary": "Used, working condition"
+        },
+        "period": {
+          "starts_at": "2026-07-12T14:00:00Z",
+          "ends_at": "2026-07-13T14:00:00Z",
+          "grace_minutes": 30
+        },
+        "handoff": {
+          "method": "in_person",
+          "location_class": "private_after_agreement"
+        },
+        "return": {
+          "method": "in_person",
+          "deadline": "2026-07-13T14:00:00Z",
+          "location_class": "private_after_agreement"
+        },
+        "price": {
+          "currency": "USD",
+          "amount": "25.00",
+          "provider": "example-processor"
+        },
+        "deposit": {
+          "required": true,
+          "currency": "USD",
+          "amount": "50.00",
+          "provider": "example-escrow",
+          "release_conditions": [
+            "bilateral_return_receipt"
+          ]
+        },
+        "permitted_use": [
+          "household_repair"
+        ],
+        "obligations": [
+          "keep_dry",
+          "return_battery_and_charger"
+        ],
+        "cancellation": {
+          "before_handoff": "full_refund_reported"
+        },
+        "condition_evidence": {
+          "method": "photo_hashes",
+          "retention_days": 90
+        },
+        "accessibility": {
+          "instruction_format": "text_and_audio"
+        }
+      }
+    },
+    {
+      "name": "invalid_missing_return",
+      "valid": false,
+      "data": {
+        "asset": {
+          "reference": "asset:fixture:drill-1",
+          "category": "tool",
+          "condition_summary": "Used, working condition"
+        },
+        "period": {
+          "starts_at": "2026-07-12T14:00:00Z",
+          "ends_at": "2026-07-13T14:00:00Z",
+          "grace_minutes": 30
+        },
+        "handoff": {
+          "method": "in_person",
+          "location_class": "private_after_agreement"
+        },
+        "price": {
+          "currency": "USD",
+          "amount": "25.00",
+          "provider": "example-processor"
+        },
+        "deposit": {
+          "required": true,
+          "currency": "USD",
+          "amount": "50.00",
+          "provider": "example-escrow",
+          "release_conditions": [
+            "bilateral_return_receipt"
+          ]
+        },
+        "permitted_use": [
+          "household_repair"
+        ],
+        "obligations": [
+          "keep_dry",
+          "return_battery_and_charger"
+        ],
+        "cancellation": {
+          "before_handoff": "full_refund_reported"
+        },
+        "condition_evidence": {
+          "method": "photo_hashes",
+          "retention_days": 90
+        },
+        "accessibility": {
+          "instruction_format": "text_and_audio"
+        }
+      }
+    },
+    {
+      "name": "valid_handoff_evidence",
+      "valid": true,
+      "data": {
+        "kind": "handoff",
+        "asset_reference": "asset:fixture:drill-1",
+        "recorded_at": "2026-07-12T14:00:30Z",
+        "condition_hashes": [
+          "sha256:1111111111111111111111111111111111111111111111111111111111111111"
+        ],
+        "accessories": [
+          "battery",
+          "charger"
+        ],
+        "usage_reading": "0"
+      }
+    },
+    {
+      "name": "invalid_evidence_without_hashes",
+      "valid": false,
+      "data": {
+        "kind": "return",
+        "asset_reference": "asset:fixture:drill-1",
+        "recorded_at": "2026-07-13T13:54:00Z",
+        "accessories": [
+          "battery",
+          "charger"
+        ]
+      }
+    }
+  ]
+}

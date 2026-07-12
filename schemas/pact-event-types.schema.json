@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wpgglabs.github.io/CommonPact/schemas/pact-event-types.schema.json",
+  "title": "CommonPact core event payload schema index",
+  "oneOf": [
+    {"$ref": "events/discovery-negotiation.schema.json"},
+    {"$ref": "events/lifecycle.schema.json"},
+    {"$ref": "events/evidence-capability.schema.json"}
+  ]
+}

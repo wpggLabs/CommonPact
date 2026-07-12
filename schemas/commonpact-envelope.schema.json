@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wpgglabs.github.io/CommonPact/schemas/commonpact-envelope.schema.json",
+  "title": "CommonPact v0.1 strict event envelope",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "protocol",
+    "protocol_version",
+    "profile",
+    "profile_version",
+    "event_type",
+    "event_id",
+    "actor",
+    "created_at",
+    "previous",
+    "payload",
+    "extensions",
+    "critical_extensions",
+    "proofs"
+  ],
+  "properties": {
+    "protocol": {
+      "const": "commonpact"
+    },
+    "protocol_version": {
+      "const": "0.1"
+    },
+    "profile": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]{1,63}$"
+    },
+    "profile_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+(?:\\.[0-9]+)?(?:-[a-z0-9.-]+)?$"
+    },
+    "event_type": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9.-]{1,127}$"
+    },
+    "event_id": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "pact_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "thread_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "actor": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "previous": {
+      "type": "array",
+      "uniqueItems": true,
+      "maxItems": 64,
+      "items": {
+        "type": "string",
+        "pattern": "^sha256:[0-9a-f]{64}$"
+      }
+    },
+    "payload": {
+      "type": "object"
+    },
+    "extensions": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^[a-z0-9.-]+/[a-zA-Z0-9._-]+$"
+      }
+    },
+    "critical_extensions": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9.-]+/[a-zA-Z0-9._-]+$"
+      }
+    },
+    "proofs": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "signer",
+          "verification_method",
+          "algorithm",
+          "signature"
+        ],
+        "properties": {
+          "signer": {
+            "type": "string",
+            "minLength": 1
+          },
+          "verification_method": {
+            "type": "string",
+            "minLength": 1
+          },
+          "algorithm": {
+            "enum": [
+              "Ed25519"
+            ]
+          },
+          "signature": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "delegation": {
+            "type": "string",
+            "pattern": "^sha256:[0-9a-f]{64}$"
+          }
+        }
+      }
+    }
+  }
+}

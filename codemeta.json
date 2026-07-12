@@ -1,0 +1,43 @@
+{
+  "@context": "https://w3id.org/codemeta/3.0",
+  "@type": "SoftwareSourceCode",
+  "name": "CommonPact",
+  "description": "Open, profile-based coordination protocol for direct discovery, private negotiation, agreements, and portable evidence without a mandatory platform owner.",
+  "codeRepository": "https://github.com/wpggLabs/CommonPact",
+  "issueTracker": "https://github.com/wpggLabs/CommonPact/issues",
+  "url": "https://wpgglabs.github.io/CommonPact/",
+  "license": "https://spdx.org/licenses/Apache-2.0",
+  "version": "0.1.0-rfc",
+  "developmentStatus": "concept",
+  "author": {
+    "@type": "Organization",
+    "name": "wpggLabs"
+  },
+  "keywords": [
+    "commonpact",
+    "open-protocol",
+    "interoperability",
+    "peer-to-peer",
+    "coordination",
+    "cryptographic-identity",
+    "portable-evidence",
+    "digital-public-infrastructure",
+    "protocol-design",
+    "research-rfc",
+    "pactride"
+  ],
+  "hasPart": [
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "PactRide",
+      "url": "https://github.com/wpggLabs/PactRide",
+      "description": "First CommonPact source profile for ride coordination."
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "PactRental",
+      "url": "https://github.com/wpggLabs/CommonPact/tree/main/profiles/pactrental",
+      "description": "Second-domain abstraction-test profile."
+    }
+  ]
+}

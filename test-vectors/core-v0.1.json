@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "canonicalization": "RFC8785-compatible fixtures without floating-point values",
+  "signature_algorithm": "Ed25519",
+  "cases": [
+    {"name":"valid_signed_intent","valid":true,"fixture":"events/signed_intent.json"},
+    {"name":"valid_signed_proposal","valid":true,"fixture":"events/signed_proposal.json","context":{"known_previous":["sha256:6ebaab627d3e8a8a0e331a2c891a021c717d5f5fd428fb21273681e942bbb490"],"expected_terms_hash":"sha256:f4a08cd3e74864a070fdc1d060451ddb10bab0375c069ce7856adff8e8469f54"}},
+    {"name":"valid_owner_acceptance","valid":true,"fixture":"events/owner_acceptance.json","context":{"known_previous":["sha256:200c60668ee8eef3fbc8bda8001031151f7825cbacb14d882e5316d9765da51a"],"proposal_expires_at":"2026-07-11T18:08:00Z","expected_terms_hash":"sha256:f4a08cd3e74864a070fdc1d060451ddb10bab0375c069ce7856adff8e8469f54"}},
+    {"name":"valid_renter_acceptance","valid":true,"fixture":"events/renter_acceptance.json","context":{"known_previous":["sha256:200c60668ee8eef3fbc8bda8001031151f7825cbacb14d882e5316d9765da51a"],"proposal_expires_at":"2026-07-11T18:08:00Z","expected_terms_hash":"sha256:f4a08cd3e74864a070fdc1d060451ddb10bab0375c069ce7856adff8e8469f54"}},
+    {"name":"valid_bilateral_activation","valid":true,"fixture":"events/bilateral_activation.json","context":{"known_previous":["sha256:17abc3e80118f4357068fe29da8c692d567289c373214eb78d3c83f53072541f","sha256:592b6d60773d94c77b1c26eb3084efbc86e58b87db71e1d8cbb099119e87d1b3"],"expected_signers":["did:key:z6MkiY8tpGUJ3v59n8ozNxnSn11pVWkPjy9pighh8FoMwWjk","did:key:z6MkjH7ywebsow6iQnbNeZDrbs56VSZCgQirDbacPPv9VHmM"],"expected_terms_hash":"sha256:f4a08cd3e74864a070fdc1d060451ddb10bab0375c069ce7856adff8e8469f54"}},
+    {"name":"valid_return_claim","valid":true,"fixture":"events/return_claim.json","context":{"known_previous":["sha256:dd1f0e26a48c04642def0dd12c83e4ad4723fc8b9978f02dc4d76350deb26c18"],"expected_terms_hash":"sha256:f4a08cd3e74864a070fdc1d060451ddb10bab0375c069ce7856adff8e8469f54"}},
+    {"name":"valid_bilateral_completion_receipt","valid":true,"fixture":"events/bilateral_completion_receipt.json","context":{"known_previous":["sha256:37b622d1a9aa22b11d078a3620fdf975037c1638e4f0ae25656b962392cb85d4"],"expected_signers":["did:key:z6MkiY8tpGUJ3v59n8ozNxnSn11pVWkPjy9pighh8FoMwWjk","did:key:z6MkjH7ywebsow6iQnbNeZDrbs56VSZCgQirDbacPPv9VHmM"],"expected_terms_hash":"sha256:f4a08cd3e74864a070fdc1d060451ddb10bab0375c069ce7856adff8e8469f54"}},
+    {"name":"invalid_protocol","valid":false,"fixture":"events/signed_intent.json","mutation":"wrong_protocol","expected_error":"CP-ENV-001"},
+    {"name":"invalid_event_id","valid":false,"fixture":"events/signed_intent.json","mutation":"event_id_mismatch","expected_error":"CP-ID-001"},
+    {"name":"invalid_signature","valid":false,"fixture":"events/signed_intent.json","mutation":"invalid_signature","expected_error":"CP-PROOF-001"},
+    {"name":"invalid_duplicate_signer","valid":false,"fixture":"events/bilateral_activation.json","mutation":"duplicate_signer","expected_error":"CP-PROOF-003","context":{"expected_signers":["did:key:z6MkiY8tpGUJ3v59n8ozNxnSn11pVWkPjy9pighh8FoMwWjk","did:key:z6MkjH7ywebsow6iQnbNeZDrbs56VSZCgQirDbacPPv9VHmM"]}},
+    {"name":"invalid_unexpected_signer","valid":false,"fixture":"events/bilateral_activation.json","mutation":"unexpected_signer","expected_error":"CP-PROOF-003","context":{"expected_signers":["did:key:z6MkiY8tpGUJ3v59n8ozNxnSn11pVWkPjy9pighh8FoMwWjk","did:key:z6MkjH7ywebsow6iQnbNeZDrbs56VSZCgQirDbacPPv9VHmM"]}},
+    {"name":"invalid_unknown_critical_extension","valid":false,"fixture":"events/signed_intent.json","mutation":"unknown_critical_extension","expected_error":"CP-EXT-001"},
+    {"name":"invalid_stale_acceptance","valid":false,"fixture":"events/owner_acceptance.json","expected_error":"CP-TIME-001","context":{"proposal_expires_at":"2026-07-11T18:02:00Z"}},
+    {"name":"invalid_terms_mismatch","valid":false,"fixture":"events/owner_acceptance.json","expected_error":"CP-TERMS-001","context":{"expected_terms_hash":"sha256:3333333333333333333333333333333333333333333333333333333333333333"}},
+    {"name":"invalid_missing_predecessor","valid":false,"fixture":"events/signed_proposal.json","expected_error":"CP-CAUSE-001","context":{"known_previous":[]}},
+    {"name":"invalid_revoked_signer","valid":false,"fixture":"events/signed_intent.json","expected_error":"CP-PROOF-004","context":{"revoked_signers":["did:key:z6MkiY8tpGUJ3v59n8ozNxnSn11pVWkPjy9pighh8FoMwWjk"]}},
+    {"name":"invalid_profile_downgrade","valid":false,"fixture":"events/signed_intent.json","expected_error":"CP-VER-002","context":{"minimum_profile_version":"0.2"}},
+    {"name":"invalid_lifecycle_transition","valid":false,"fixture":"events/bilateral_completion_receipt.json","expected_error":"CP-STATE-001","context":{"expected_signers":["did:key:z6MkiY8tpGUJ3v59n8ozNxnSn11pVWkPjy9pighh8FoMwWjk","did:key:z6MkjH7ywebsow6iQnbNeZDrbs56VSZCgQirDbacPPv9VHmM"],"expected_terms_hash":"sha256:f4a08cd3e74864a070fdc1d060451ddb10bab0375c069ce7856adff8e8469f54","allowed_event_types":["pact.activate"]}}
+  ]
+}

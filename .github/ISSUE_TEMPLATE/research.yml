@@ -1,0 +1,20 @@
+name: Research or protocol issue
+description: Record a falsifiable CommonPact problem, implementation task, or domain review
+title: "[Research]: "
+body:
+  - type: textarea
+    attributes:
+      label: Problem
+      description: What concrete failure, ambiguity, or missing evidence exists?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Required evidence
+      description: What reproducible output would resolve or narrow it?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Risks and responsibility
+      description: What privacy, security, accessibility, legal, economic, or operational boundary applies?

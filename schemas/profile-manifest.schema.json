@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wpgglabs.github.io/CommonPact/schemas/profile-manifest.schema.json",
+  "title": "CommonPact profile manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "identifier",
+    "version",
+    "status",
+    "name",
+    "maintainers",
+    "core_versions",
+    "documents",
+    "schema",
+    "test_vectors"
+  ],
+  "properties": {
+    "identifier": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]{1,63}$"
+    },
+    "version": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "concept",
+        "draft",
+        "research-rfc",
+        "interoperability-candidate",
+        "proven-profile",
+        "operational-deployment"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "maintainers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "core_versions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "documents": {
+      "type": "object",
+      "minProperties": 3,
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "schema": {
+      "type": "string"
+    },
+    "test_vectors": {
+      "type": "string"
+    }
+  }
+}

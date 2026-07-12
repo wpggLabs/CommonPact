@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CommonPact — An open protocol below competing applications</title>
+  <meta name="description" content="CommonPact is a profile-based research protocol for direct discovery, private negotiation, agreement, lifecycle events, and portable evidence without a mandatory platform owner.">
+  <link rel="canonical" href="https://wpgglabs.github.io/CommonPact/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wpgglabs.github.io/CommonPact/">
+  <meta property="og:title" content="CommonPact — Protocol over platform">
+  <meta property="og:description" content="Use infrastructure without being owned by it.">
+  <meta property="og:image" content="https://wpgglabs.github.io/CommonPact/assets/commonpact-vision-social.jpg">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="640">
+  <meta property="og:image:alt" content="CommonPact: independent people, cooperatives, and services connected through a distributed agreement network without a central platform.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CommonPact — Protocol over platform">
+  <meta name="twitter:description" content="An open coordination protocol below competing applications.">
+  <meta name="twitter:image" content="https://wpgglabs.github.io/CommonPact/assets/commonpact-vision-social.jpg">
+  <meta name="twitter:image:alt" content="CommonPact: a distributed agreement network without a central platform.">
+  <meta name="theme-color" content="#090a0c">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="topbar">
+    <a class="identity" href="#top" aria-label="CommonPact home">
+      <img src="assets/commonpact-mark.svg" alt="" width="38" height="38">
+      <span><b>COMMONPACT</b><small>CORE / RESEARCH RFC</small></span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#architecture">Architecture</a>
+      <a href="#journeys">Journeys</a>
+      <a href="#profiles">Profiles</a>
+      <a href="#status">Status</a>
+      <a class="repo" href="https://github.com/wpggLabs/CommonPact">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <main id="content">
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="kicker">CP/00 · OPEN COORDINATION LAYER</p>
+        <h1>Protocol<br>over <em>platform.</em></h1>
+        <p class="lede">CommonPact documents a shared way for people and organizations to discover each other, negotiate privately, authorize the same terms, and keep portable evidence—without requiring one company to own every relationship.</p>
+        <div class="actions">
+          <a class="primary" href="https://github.com/wpggLabs/CommonPact/blob/main/FOUNDER_VISION.md">Read founder vision</a>
+          <a class="secondary" href="https://github.com/wpggLabs/CommonPact/blob/main/PROTOCOL.md">Inspect protocol v0.1</a>
+        </div>
+      </div>
+      <div class="protocol-board" aria-label="Protocol stack diagram">
+        <div class="board-head"><span>COMMONPACT TOPOLOGY</span><span>PRE-IMPLEMENTATION / NOT DEPLOYED</span></div>
+        <div class="stack-row apps"><b>APPLICATIONS</b><span>Ride client</span><span>Rental client</span><span>Delivery client</span></div>
+        <div class="stack-line"><i></i><i></i><i></i></div>
+        <div class="stack-row core"><b>CORE</b><span>Discover</span><span>Agree</span><span>Prove</span></div>
+        <div class="stack-line"><i></i><i></i><i></i></div>
+        <div class="stack-row infra"><b>INFRASTRUCTURE</b><span>Relays</span><span>Direct channels</span><span>Optional services</span></div>
+        <p>No mandatory platform owner. No canonical backend. No protocol commission. No claim that infrastructure disappears.</p>
+      </div>
+    </section>
+
+    <section class="statement">
+      <p class="section-id">01 / THE CURRENT FAILURE</p>
+      <div class="statement-grid">
+        <h2>Convenience became ownership.</h2>
+        <div>
+          <p>Today a rider often needs Uber or Lyft to reach a driver. A renter needs a marketplace to reach an owner. A sender needs a logistics platform. The service may be useful, but it also becomes the unavoidable gatekeeper for discovery, ranking, terms, records, reputation, and fees.</p>
+          <p class="signal">CommonPact targets the mandatory owner—not every useful intermediary.</p>
+        </div>
+      </div>
+      <div class="comparison" role="img" aria-label="Comparison between a closed platform and CommonPact">
+        <div class="closed"><span>USER</span><strong>MANDATORY PLATFORM</strong><span>PROVIDER</span></div>
+        <div class="open"><span>USER CLIENT</span><strong>SHARED PROTOCOL</strong><span>PROVIDER CLIENT</span></div>
+      </div>
+    </section>
+
+    <section id="architecture">
+      <p class="section-id">02 / SYSTEM BOUNDARIES</p>
+      <div class="section-title"><h2>One core.<br>Responsibilities stay visible.</h2><p>The protocol authenticates statements and relationships between statements. Profiles carry domain meaning. Applications carry user experience. Accountable operators still own real-world duties.</p></div>
+      <div class="layer-table">
+        <article><span>01</span><h3>Core</h3><p>Envelope, event IDs, authorization, agreement, causality, claims, receipts, extensions.</p></article>
+        <article><span>02</span><h3>Profiles</h3><p>Roles, terms, lifecycle, proof, privacy, accessibility, legal and safety boundaries.</p></article>
+        <article><span>03</span><h3>Clients</h3><p>Interface, keys, matching, ranking, trust policy, export, disclosure, support integration.</p></article>
+        <article><span>04</span><h3>Operators</h3><p>Infrastructure, moderation, incidents, insurance, payment, compliance, human support.</p></article>
+      </div>
+    </section>
+
+    <section id="journeys">
+      <p class="section-id">03 / HUMAN JOURNEYS</p>
+      <div class="section-title"><h2>The same coordination pattern.<br>Different physical worlds.</h2><p>The core stays small because rides, rentals, deliveries, and donations do not share the same safety or legal meaning.</p></div>
+      <div class="journey-grid">
+        <article><span class="profile-code">CP/RIDE</span><h3>Request → private terms → pickup proof → ride receipt</h3><p>PactRide remains the complete standalone source profile. Transport safety, insurance, accessibility, and emergency response stay ride-specific.</p></article>
+        <article><span class="profile-code">CP/RENTAL</span><h3>Availability → reservation → handoff → return evidence</h3><p>PactRental tests persistent assets, possession, deposits, condition records, delayed damage, and external remedies.</p></article>
+        <article><span class="profile-code muted">CP/DELIVERY</span><h3>Concept: custody may pass through several parties</h3><p>Sender, courier, subcontractor, recipient, refusal, loss, return-to-sender, and address privacy still require domain research.</p></article>
+        <article><span class="profile-code warning">CP/FUND</span><h3>High-risk concept: money requires accountable custody</h3><p>CommonPact must not pretend a protocol replaces processors, sanctions checks, tax records, fraud controls, or charity law.</p></article>
+      </div>
+      <a class="text-link" href="https://github.com/wpggLabs/CommonPact/blob/main/USE_CASES_AND_USER_JOURNEYS.md">Read the full journeys and limits →</a>
+    </section>
+
+    <section class="lifecycle">
+      <p class="section-id">04 / PACT LIFECYCLE</p>
+      <h2>A pact is not a chat message.</h2>
+      <ol>
+        <li><span>01</span><b>Discoverable</b><p>Publish a privacy-limited intent with expiry.</p></li>
+        <li><span>02</span><b>Negotiating</b><p>Exchange complete proposed terms privately.</p></li>
+        <li><span>03</span><b>Agreed</b><p>Required parties authorize the identical terms hash.</p></li>
+        <li><span>04</span><b>Active</b><p>The profile-defined handoff or obligation begins.</p></li>
+        <li><span>05</span><b>Completed</b><p>Required parties authorize one portable receipt.</p></li>
+      </ol>
+      <p class="fine">Cancelled, aborted, disputed, and externally resolved states remain explicit. Arrival order never decides truth.</p>
+    </section>
+
+    <section id="profiles">
+      <p class="section-id">05 / PROFILE FAMILY</p>
+      <div class="profile-list">
+        <a href="https://github.com/wpggLabs/PactRide"><b>PactRide</b><span>Standalone founder-vision RFC</span><i>Source profile ↗</i></a>
+        <a href="https://github.com/wpggLabs/CommonPact/tree/main/profiles/pactrental"><b>PactRental</b><span>Complete founder-authored Research RFC package</span><i>Abstraction test ↗</i></a>
+        <a href="https://github.com/wpggLabs/CommonPact/blob/main/profiles/pactdelivery/CONCEPT.md"><b>PactDelivery</b><span>Candidate concept</span><i>Research boundary ↗</i></a>
+        <a href="https://github.com/wpggLabs/CommonPact/blob/main/profiles/pactfund/CONCEPT.md"><b>PactFund</b><span>High-risk candidate concept</span><i>Professional review required ↗</i></a>
+      </div>
+    </section>
+
+    <section class="truth">
+      <p class="section-id">06 / CLAIM DISCIPLINE</p>
+      <div class="truth-grid">
+        <div><h2>The protocol can establish</h2><ul><li>which key authorized an event;</li><li>which complete terms were accepted;</li><li>causal references and provenance;</li><li>whether the required signer set authorized one receipt.</li></ul></div>
+        <div><h2>The protocol cannot establish</h2><ul><li>legal identity, honesty, safety, or ownership;</li><li>physical performance or hidden condition;</li><li>payment finality, insurance coverage, or lawful operation;</li><li>fair dispute resolution or a viable market.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="status" class="status">
+      <p class="section-id">07 / CURRENT STATUS</p>
+      <div class="status-grid">
+        <div><p class="status-word">DOCUMENTED</p><h2>The founder vision is complete.</h2><p>The repository includes normative draft semantics, strict payload schemas, cryptographic fixtures, a complete PactRental documentation package, adoption and responsibility analysis, and automated validation.</p></div>
+        <div><p class="status-word inverse">UNPROVEN</p><h2>The system is not built.</h2><p>There are no independent implementations, production relays, operating marketplaces, legal approval, safety guarantee, payment custody, or funded deployment team.</p></div>
+      </div>
+      <div class="actions">
+        <a class="primary" href="https://github.com/wpggLabs/CommonPact/blob/main/STATUS.md">Read exact status</a>
+        <a class="secondary" href="https://github.com/wpggLabs/CommonPact/issues">Challenge the proposal</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><b>COMMONPACT / CP-00</b><p>Open coordination without a mandatory platform owner.</p></div>
+    <div><a href="https://github.com/wpggLabs/CommonPact">Repository</a><a href="https://github.com/wpggLabs/CommonPact/blob/main/LICENSE">Apache-2.0</a><a href="https://github.com/wpggLabs/PactRide">PactRide</a></div>
+  </footer>
+</body>
+</html>

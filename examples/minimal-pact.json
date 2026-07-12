@@ -1,0 +1,13 @@
+{
+  "description": "Complete fictional PactRental flow using signed fixture events",
+  "fixture_base": "../test-vectors/",
+  "events": [
+    {"fixture":"events/signed_intent.json","event_type":"intent.publish","event_id":"sha256:6ebaab627d3e8a8a0e331a2c891a021c717d5f5fd428fb21273681e942bbb490"},
+    {"fixture":"events/signed_proposal.json","event_type":"pact.proposal","event_id":"sha256:200c60668ee8eef3fbc8bda8001031151f7825cbacb14d882e5316d9765da51a"},
+    {"fixture":"events/owner_acceptance.json","event_type":"pact.accept","event_id":"sha256:17abc3e80118f4357068fe29da8c692d567289c373214eb78d3c83f53072541f"},
+    {"fixture":"events/renter_acceptance.json","event_type":"pact.accept","event_id":"sha256:592b6d60773d94c77b1c26eb3084efbc86e58b87db71e1d8cbb099119e87d1b3"},
+    {"fixture":"events/bilateral_activation.json","event_type":"pact.activate","event_id":"sha256:dd1f0e26a48c04642def0dd12c83e4ad4723fc8b9978f02dc4d76350deb26c18"},
+    {"fixture":"events/return_claim.json","event_type":"pact.completion.claim","event_id":"sha256:37b622d1a9aa22b11d078a3620fdf975037c1638e4f0ae25656b962392cb85d4"},
+    {"fixture":"events/bilateral_completion_receipt.json","event_type":"pact.completion.receipt","event_id":"sha256:8940e583b10b2a348c17dfa9d3ef5bbb073cc178c56ce3afc4033ee8adc215de"}
+  ]
+}
